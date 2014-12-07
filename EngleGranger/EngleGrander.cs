@@ -17,8 +17,7 @@ namespace EngleGranger
 		public bool IsCointegrated(TimeSeries a, TimeSeries b)
 		{
 			var model = _regression.Run(a - b);
-
-			return false;
+			return _stationarityTest.IsStationary(model.Residuals);
 		}
 	}
 }

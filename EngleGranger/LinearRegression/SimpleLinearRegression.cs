@@ -2,11 +2,12 @@
 
 namespace EngleGranger.LinearRegression
 {
+	/// <summary>
+	/// Simple linear regression, as per http://en.wikipedia.org/wiki/Simple_linear_regression#Fitting_the_regression_line.
+	/// Slope=cov(x,y)/var(x)
+	/// </summary>
 	public class SimpleLinearRegression : IRegression
 	{
-		/// <summary>
-		/// As per http://en.wikipedia.org/wiki/Simple_linear_regression#Fitting_the_regression_line, slope=cov(x,y)/var(x)
-		/// </summary>
 		public Model Run(TimeSeries timeSeries)
 		{
 			var means = GetMeans(timeSeries);
@@ -16,8 +17,8 @@ namespace EngleGranger.LinearRegression
 
 			var x = 0m;
 			var y = 0m;
-			foreach (var value in timeSeries.Values) {
-				y = value.Item2;
+			foreach (var pair in timeSeries.Values) {
+				y = pair.Value;
 				covariance += (x - means.Item1) * (y - means.Item2);
 				variance += (decimal)Math.Pow((double)(x - means.Item1), 2);
 				x++;
@@ -28,15 +29,15 @@ namespace EngleGranger.LinearRegression
 			return new Model(slope, intercept);
 		}
 
-		private static Tuple<decimal, decimal> GetMeans(TimeSeries values)
+		private static Tuple<decimal, decimal> GetMeans(TimeSeries timeSeries)
 		{
 			var total = 0;
 			var xTotal = 0m;
 			var yTotal = 0m;
-			foreach (var value in values.Values) {
+			foreach (var value in timeSeries.Values) {
 				total++;
 				xTotal += (total-1);
-				yTotal += value.Item2;
+				yTotal += value.Value;
 			}
 
 			return Tuple.Create(xTotal/total, yTotal/total);

@@ -5,9 +5,9 @@
 	/// </summary>
 	public class AugmentedDickeyFullerTest : IStationarityTest
 	{
-		public void Run(TimeSeries values)
+		public bool IsStationary(TimeSeries residuals)
 		{
-			throw new System.NotImplementedException();
+			return false;
 		}
 	}
 }

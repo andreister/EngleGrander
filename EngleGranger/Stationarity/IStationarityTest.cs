@@ -2,6 +2,6 @@
 {
 	public interface IStationarityTest
 	{
-		void Run(TimeSeries values);
+		bool IsStationary(TimeSeries residuals);
 	}
 }
