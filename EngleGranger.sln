@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngleGranger", "EngleGranger\EngleGranger.csproj", "{96DEA318-51D5-4F95-85A2-AEFB08A2ECFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngleGranger.Tests", "EngleGranger.Tests\EngleGranger.Tests.csproj", "{CDC48908-CF0E-499D-BB6A-69C4013FEA88}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96DEA318-51D5-4F95-85A2-AEFB08A2ECFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96DEA318-51D5-4F95-85A2-AEFB08A2ECFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96DEA318-51D5-4F95-85A2-AEFB08A2ECFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96DEA318-51D5-4F95-85A2-AEFB08A2ECFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDC48908-CF0E-499D-BB6A-69C4013FEA88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDC48908-CF0E-499D-BB6A-69C4013FEA88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDC48908-CF0E-499D-BB6A-69C4013FEA88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDC48908-CF0E-499D-BB6A-69C4013FEA88}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
