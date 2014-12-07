@@ -1,4 +1,4 @@
-EngleGrander
+EngleGrander in C#
 ============
 
 The two step Engle-Grander cointegration test, to detect relationship between time series X(t) and Y(t). 
