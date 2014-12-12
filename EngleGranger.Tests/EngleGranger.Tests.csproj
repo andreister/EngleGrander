@@ -43,8 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helper.cs" />
     <Compile Include="LinearRegression\SimpleLinearRegressionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stationarity\AugmentedDickeyFullerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

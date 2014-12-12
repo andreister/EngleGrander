@@ -43,8 +43,8 @@
     <Compile Include="LinearRegression\IRegression.cs" />
     <Compile Include="LinearRegression\Model.cs" />
     <Compile Include="LinearRegression\SimpleLinearRegression.cs" />
-    <Compile Include="Stationarity\AugmentedDickeyFullerTest.cs" />
-    <Compile Include="Stationarity\IStationarityTest.cs" />
+    <Compile Include="Stationarity\AugmentedDickeyFuller.cs" />
+    <Compile Include="Stationarity\IStationarityChecker.cs" />
     <Compile Include="TimeSeries.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

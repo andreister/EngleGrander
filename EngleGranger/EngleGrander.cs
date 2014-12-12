@@ -6,18 +6,18 @@ namespace EngleGranger
 	public class EngleGrander
 	{
 		private readonly IRegression _regression;
-		private readonly IStationarityTest _stationarityTest;
+		private readonly IStationarityChecker _stationarityChecker;
 
-		public EngleGrander(IRegression regression = null, IStationarityTest stationarityTest = null)
+		public EngleGrander(IRegression regression = null, IStationarityChecker checker = null)
 		{
 			_regression = regression ?? new SimpleLinearRegression();
-			_stationarityTest = stationarityTest ?? new AugmentedDickeyFullerTest();
+			_stationarityChecker = checker ?? new AugmentedDickeyFuller();
 		}
 
 		public bool IsCointegrated(TimeSeries a, TimeSeries b)
 		{
 			var model = _regression.Run(a - b);
-			return _stationarityTest.IsStationary(model.Residuals);
+			return _stationarityChecker.IsStationary(model.Residuals);
 		}
 	}
 }

@@ -10,7 +10,7 @@ namespace EngleGranger
 
 		public TimeSeries(IDictionary<DateTime, decimal> values)
 		{
-			Values = values;
+			Values = (values != null) ? new SortedDictionary<DateTime, decimal>(values) : new SortedDictionary<DateTime, decimal>();
 		}
 
 		public decimal this[DateTime date]
@@ -32,6 +32,26 @@ namespace EngleGranger
 		{
 			var result = a.ToDictionary(x => x.Key, x => a[x.Key] - b[x.Key]);
 			return new TimeSeries(result);
+		}
+
+		public TimeSeries Diff()
+		{
+			var result = new TimeSeries(null);
+
+			var previous = decimal.MinValue;
+			foreach (var pair in this) {
+				var current = pair.Value;
+				if (previous == decimal.MinValue) {
+					//we're at start
+					previous = current;
+					continue;
+				}
+				
+				result.Values.Add(pair.Key, current - previous);
+				previous = current;
+			}
+
+			return result;
 		}
 	}
 }
